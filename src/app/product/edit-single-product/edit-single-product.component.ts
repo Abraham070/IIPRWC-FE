@@ -79,14 +79,14 @@ export class EditSingleProductComponent implements OnInit {
   onSubmit() {
 
     const val = this.form.value;
-    if (this.form.valid) {
+    if (this.form.valid && (val.price>0) && (val.stock>0)) {
       this.loading = true
       console.log(val);
       this.adminService.editProduct(this.product.id, val.name, val.price, val.stock, val.category, val.shortDescription, val.description, val.imageSrc).subscribe({
         next: () => {
           this.loading = false;
           this.router.navigateByUrl('/admin/edit-products');
-          this.toastr.success('Succesvol gewijzigd!', 'Product wijziging!')
+          this.toastr.success('Succesfully changed!', 'Product has been changed!')
         },
         error: error => {
           this.loading = false;
@@ -97,6 +97,7 @@ export class EditSingleProductComponent implements OnInit {
     } else {
       console.log('There was an error! Form invalid!');
       console.log(val)
+      this.toastr.error("Form is not valid")
     }
   }
 

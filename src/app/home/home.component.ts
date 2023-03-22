@@ -7,7 +7,7 @@ import {AuthService} from "../auth.service";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  heroImageSrc = 'assets/images/home.png'
+  homeImageSrc = 'assets/images/home.png'
   loggedIn = this.authService.isLoggedIn();
 
   constructor(private authService: AuthService) { }

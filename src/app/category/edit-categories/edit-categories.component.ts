@@ -35,10 +35,10 @@ export class EditCategoriesComponent implements OnInit {
       this.http.delete<Category>(this.baseUrl + '/api/v1/categories/' + categoryID).subscribe(  {
         next: () => {
         this.ngOnInit();
-        this.toastr.error('Succesvol verwijderd!', 'Category verwijderd!');
+        this.toastr.success('Successfully deleted!', 'Category deleted!');
       },
         error: () => {
-          this.toastr.error('Er is een product die nog gebruik maakt van dit categorie!', 'Conflict!');
+          this.toastr.error('There are products using this category!', 'Conflict!');
         }
         });
 

@@ -13,13 +13,13 @@
         <div class="flex mt-10 mb-5">
           <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Promo-code Details</h3>
           <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Manage</h3>
-          <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Discound percentage</h3>
+          <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Discount percentage</h3>
           <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Name</h3>
         </div>
         <div *ngFor="let promoCode of promoCodes" class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
           <div class="flex w-2/5"> <!-- promoCode -->
             <div class="w-20 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 text-indigo-500 h-8">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 text-teal-500 h-8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 14.25l6-6m4.5-3.493V21.75l-3.75-1.5-3.75 1.5-3.75-1.5-3.75 1.5V4.757c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0c1.1.128 1.907 1.077 1.907 2.185zM9.75 9h.008v.008H9.75V9zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm4.125 4.5h.008v.008h-.008V13.5zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
               </svg>
 
@@ -31,7 +31,7 @@
             </div>
           </div>
           <div class="flex justify-center w-1/5">
-            <button routerLink="/admin/edit/promoCode/{{promoCode.id}}" class="bg-indigo-400 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Change</button>
+            <button routerLink="/admin/edit/promoCode/{{promoCode.id}}" class="bg-teal-400 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Change</button>
 
           </div>
           <span class="text-center w-1/5 font-semibold text-sm">{{promoCode.korting}} %</span>
@@ -39,9 +39,9 @@
         </div>
 
 
-        <a routerLink="/admin-dashboard" class="flex font-semibold text-indigo-600 text-sm mt-10">
+        <a routerLink="/admin-dashboard" class="flex font-semibold text-teal-600 text-sm mt-10">
 
-          <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
+          <svg class="fill-current mr-2 text-teal-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
           Back to dashboard
         </a>
       </div>

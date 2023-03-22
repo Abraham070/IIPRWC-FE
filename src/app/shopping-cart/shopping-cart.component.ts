@@ -4,6 +4,10 @@ import {Product} from "../models/product.model";
 import {AuthService} from "../auth.service";
 import {CartService} from "../cart.service";
 import {environment} from "../../environments/environment";
+import {AdminService} from "../admin.service";
+import {PromoCode} from "../models/promoCode.model";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-shopping-cart',
@@ -13,16 +17,25 @@ import {environment} from "../../environments/environment";
 export class ShoppingCartComponent implements OnInit {
   private baseUrl = environment.base_url;
 
-  constructor(private http: HttpClient, private authService: AuthService, private cartService: CartService) {
+  constructor(private http: HttpClient, private authService: AuthService, private cartService: CartService, private adminService: AdminService, private fb:FormBuilder, private toastr:ToastrService) {
+    this.form = this.fb.group({
+      name: ["", Validators.required]
+    })
   }
 
-
+  promocodes: PromoCode[] = []
   products: Product[] = [];
   totalCost: number = 0;
   totalProducts: number = 0;
   cart: any[] = [];
+  form:FormGroup;
+  buttonDisabled = false;
+
+
+
   ngOnInit() {
   this.loadCart();
+  this.getPromocodes()
   }
 
   loadCart() {
@@ -38,11 +51,31 @@ export class ShoppingCartComponent implements OnInit {
     }
   }
 
+  getPromocodes(){
+    this.http.get<PromoCode[]>(this.baseUrl + '/api/v1/promocodes').pipe()
+    .subscribe(res => {
+        this.promocodes = res;
+      }
+    )}
+  applyPromo(){
+    const val = this.form.value
+    let applied = false;
+    for (let i = 0; i < this.promocodes.length; i++) {
+      if (val.name === this.promocodes[i].name) {
+        this.totalCost = this.totalCost * (1 - (this.promocodes[i].korting.valueOf()/100));
+        applied=true;
+        this.buttonDisabled = true;
+        this.toastr.success("PROMO APPLIED")
+        break;
+      }
+    }
+    if(!applied){this.toastr.error("FOUTE PROMO")}
+  }
 
   getProduct(productId: String, quantity:number) {
     this.http.get<Product>(this.baseUrl + '/api/v1/products/' + productId).subscribe((res) => {
       res.quantity = quantity;
-      res.totalPrice = res.price * quantity;
+      res.totalPrice = (res.price * quantity);
       this.totalProducts += res.quantity;
       this.totalCost += res.totalPrice;
       this.products.push(res);
@@ -60,8 +93,15 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   subtractQuantity(productQuantity: any, productID: String) {
-    this.cartService.addToCart(productID, productQuantity -= 1);
-    this.loadCart();
+    if (productQuantity == 1 || productQuantity < 1) {
+      productQuantity = 1;
+      this.cartService.addToCart(productID, productQuantity -= 1);
+
+    } else
+    {
+      this.cartService.addToCart(productID, productQuantity -= 1);
+      this.loadCart();
+    }
   }
 
 }

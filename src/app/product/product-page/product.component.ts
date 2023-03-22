@@ -43,7 +43,7 @@ export class ProductComponent implements OnInit {
   subtractQuantity() {
     if (this.quantity == 1 || this.quantity < 1) {
       this.quantity = 1;
-      this.toastr.error("Not allowed", "Error")
+      this.toastr.error("Negative numbers", "Error")
 
     } else
     {
@@ -53,7 +53,7 @@ export class ProductComponent implements OnInit {
 
   addToCart() {if (this.quantity == 1 || this.quantity < 1) {
     this.quantity = 1;
-    this.toastr.error("Not allowed", "Error")
+    this.toastr.error("Negative numbers", "Error")
 
   } else
   {

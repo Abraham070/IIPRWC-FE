@@ -34,7 +34,7 @@ export class EditPromocodeComponent implements OnInit {
   removePromoCode(promoID : String) {
     this.http.delete<PromoCode>(this.baseUrl + '/api/v1/promocodes/' + promoID).subscribe( () => {
         this.ngOnInit();
-        this.toastr.error('Succesvol verwijderd!', 'Promocode verwijderd!');
+        this.toastr.success('Successfully deleted!', 'Promocode deleted!');
       }
     )
 

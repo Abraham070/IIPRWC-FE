@@ -33,7 +33,6 @@ export class CartService {
    } else {
      res.quantity = quantity;
      localStorage.setItem("cart", JSON.stringify(this.cart));
-     this.toastr.success("Adjusted the quantity!", "Quantity adjusted!")
    }
   }
 

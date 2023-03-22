@@ -42,7 +42,7 @@ export class AddCategoriesComponent implements OnInit {
         next: () => {
           this.loading = false;
           this.router.navigateByUrl('/admin/edit-categories');
-          this.toastr.success('Succesvol het category aangemaakt!', 'Category Aangemaakt!')
+          this.toastr.success('Successfully created!', 'Category created!')
         },
         error: error => {
           this.loading = false;
@@ -52,6 +52,7 @@ export class AddCategoriesComponent implements OnInit {
 
     } else {
       console.log('There was an error! Form invalid!');
+      this.toastr.error("Form is not valid")
     }
   }
 

@@ -16,6 +16,7 @@ import {AddCategoriesComponent} from "./category/add-categories/add-categories.c
 import {EditSingleCategoryComponent} from "./category/edit-single-category/edit-single-category.component";
 import {EditPromocodeComponent} from "./promocode/edit-promocode/edit-promocode.component";
 import {AddPromoCodesComponent} from "./promocode/add-promo-codes/add-promo-codes.component";
+import {EditSinglePromoCodeComponent} from "./promocode/edit-single-promo-code/edit-single-promo-code.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
   { path: 'admin/edit-promocodes', component: EditPromocodeComponent},
   { path: 'admin/add-category', component: AddCategoriesComponent},
   { path: 'admin/add-promocode', component: AddPromoCodesComponent},
-  { path: 'admin/edit-users/:id', component: EditUsersComponent}
+  { path: 'admin/edit-users/:id', component: EditUsersComponent},
+  { path: 'admin/edit/promoCode/:id', component: EditSinglePromoCodeComponent}
 
 
 ];

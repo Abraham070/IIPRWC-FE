@@ -62,7 +62,7 @@ export class EditSingleCategoryComponent implements OnInit {
         next: () => {
           this.loading = false;
           this.router.navigateByUrl('/admin/edit-categories');
-          this.toastr.success('Succesvol gewijzigd!', 'Categorie wijziging!')
+          this.toastr.success('Successfully changed!', 'Category changed!')
         },
         error: error => {
           this.loading = false;
@@ -72,6 +72,7 @@ export class EditSingleCategoryComponent implements OnInit {
 
     } else {
       console.log('There was an error! Form invalid!');
+      this.toastr.error("Form is not valid")
     }
   }
 
