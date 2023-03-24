@@ -33,12 +33,12 @@ export class AddPromoCodesComponent implements OnInit {
   onSubmit() {
 
     const val = this.form.value;
-    if (this.form.valid && (val.korting>0)) {
+    if (this.form.valid) {
       this.loading = true
       this.adminService.createPromoCode(val.name, val.korting).subscribe({
         next: () => {
           this.loading = false;
-          this.router.navigateByUrl(this.baseUrl + '/admin/edit-promocodes');
+          console.log(this.baseUrl + '/admin/edit-promocodes')
           this.toastr.success('Succesvol het promoCode aangemaakt!', 'Promo-code created!')
         },
         error: error => {

@@ -49,13 +49,13 @@ export class AddProductComponent implements OnInit {
   onSubmit() {
 
     const val = this.form.value;
-    if (this.form.valid) {
+    if (this.form.valid && (val.price>0) && (val.stock>0)) {
       this.loading = true
       this.adminService.createProduct(val.name, val.price, val.stock, val.category, val.shortDescription, val.description, val.imageSrc).subscribe({
         next: () => {
           this.loading = false;
           this.router.navigateByUrl('/admin/edit-products');
-          this.toastr.success('Succesvol het product-page aangemaakt!', 'Product Aangemaakt!')
+          this.toastr.success('Successfully created!', 'Product created!')
         },
         error: error => {
           this.loading = false;
@@ -65,6 +65,7 @@ export class AddProductComponent implements OnInit {
 
     } else {
       console.log('There was an error! Form invalid!');
+      this.toastr.error("Form is not valid")
     }
   }
 

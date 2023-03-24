@@ -38,7 +38,6 @@ export class AdminService {
     return this.http.post<PromoCode>(this.baseUrl + '/api/v1/promocodes', {name, korting})
   }
 
-
   upload(file: File): Observable<HttpEvent<any>> {
     const formData: FormData = new FormData();
 

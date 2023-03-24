@@ -33,7 +33,7 @@ export class EditProductComponent implements OnInit {
   removeProduct(productID : String) {
     this.http.delete<Product>(this.baseUrl + '/api/v1/products/' + productID).subscribe(() => {
       this.ngOnInit();
-      this.toastr.error('Succesvol verwijderd!', 'Product verwijderd!');
+      this.toastr.success('Successfully deleted!', 'Product deleted!');
     })
   }
 }

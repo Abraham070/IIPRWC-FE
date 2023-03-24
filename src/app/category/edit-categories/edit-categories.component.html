@@ -19,7 +19,7 @@
         <div *ngFor="let category of categories" class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
           <div class="flex w-2/5"> <!-- category -->
             <div class="w-20 flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 text-indigo-500 h-8" viewBox="0 0 24 24">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 text-teal-500 h-8" viewBox="0 0 24 24">
               <path d="M19.906 9c.382 0 .749.057 1.094.162V9a3 3 0 00-3-3h-3.879a.75.75 0 01-.53-.22L11.47 3.66A2.25 2.25 0 009.879 3H6a3 3 0 00-3 3v3.162A3.756 3.756 0 014.094 9h15.812zM4.094 10.5a2.25 2.25 0 00-2.227 2.568l.857 6A2.25 2.25 0 004.951 21H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-2.227-2.568H4.094z" />
             </svg>
             </div>
@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="flex justify-center w-1/5">
-            <button routerLink="/admin/edit/category/{{category.id}}" class="bg-indigo-400 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Change</button>
+            <button routerLink="/admin/edit/category/{{category.id}}" class="bg-teal-400 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Change</button>
 
           </div>
           <span class="text-center w-1/5 font-semibold text-sm">{{category.createDate}}</span>
@@ -38,9 +38,9 @@
         </div>
 
 
-        <a routerLink="/admin-dashboard" class="flex font-semibold text-indigo-600 text-sm mt-10">
+        <a routerLink="/admin-dashboard" class="flex font-semibold text-teal-600 text-sm mt-10">
 
-          <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
+          <svg class="fill-current mr-2 text-teal-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
           Back to dashboard
         </a>
       </div>

@@ -15,7 +15,7 @@
             <div class="flex flex-wrap -mx-3 mb-6">
               <div class="w-full px-3">
                 <label for="name" class="sr-only">Name</label>
-                <input   id="name" name="name" formControlName="name" type="text" required class="relative block w-full {{(form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)) && 'border-red-500'}} appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Name of the product">
+                <input   id="name" name="name" formControlName="name" type="text" required class="relative block w-full {{(form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)) && 'border-red-500'}} appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-teal-500 focus:outline-none focus:ring-teal-500 sm:text-sm" placeholder="Name of the product">
                 <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="w-full mb-3">
                   <p *ngIf="this.form.get('name')?.errors?.['required']" class="text-red-400 text-sm mt-2 ml-1 tracking-tight" >Name is required.</p>
                   <p *ngIf="this.form.get('name')?.errors?.['pattern']" class="text-red-400 text-sm mt-2 ml-1  tracking-tight" >Name is not valid.</p>
@@ -26,7 +26,7 @@
             <div class="flex flex-wrap -mx-3 mb-6">
               <div class="w-full px-3">
                 <label for="price" class="sr-only">price</label>
-                <input   id="price" name="name" formControlName="price" type="number" required class="relative block w-full {{(form.controls['price'].invalid && (form.controls['price'].dirty || form.controls['price'].touched)) && 'border-red-500'}} appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Price of the products">
+                <input   id="price" name="name" formControlName="price" type="number" required class="relative block w-full {{(form.controls['price'].invalid && (form.controls['price'].dirty || form.controls['price'].touched)) && 'border-red-500'}} appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-teal-500 focus:outline-none focus:ring-teal-500 sm:text-sm" placeholder="Price of the products">
                 <div *ngIf="form.controls['price'].invalid && (form.controls['price'].dirty || form.controls['price'].touched)" class="w-full mb-3">
                   <p *ngIf="this.form.get('price')?.errors?.['required']" class="text-red-400 text-sm mt-2 ml-1 tracking-tight" >Price is required.</p>
                   <p *ngIf="this.form.get('price')?.errors?.['pattern']" class="text-red-400 text-sm mt-2 ml-1  tracking-tight" >Price is not valid.</p>
@@ -37,7 +37,7 @@
             <div class="flex flex-wrap -mx-3 mb-6">
               <div class="w-full px-3">
                 <label for="stock" class="sr-only">stock</label>
-                <input   id="stock" name="name" formControlName="stock" type="number" required class="relative block w-full {{(form.controls['stock'].invalid && (form.controls['stock'].dirty || form.controls['stock'].touched)) && 'border-red-500'}} appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Amount of stock">
+                <input   id="stock" name="name" formControlName="stock" type="number" required class="relative block w-full {{(form.controls['stock'].invalid && (form.controls['stock'].dirty || form.controls['stock'].touched)) && 'border-red-500'}} appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-teal-500 focus:outline-none focus:ring-teal-500 sm:text-sm" placeholder="Amount of stock">
                 <div *ngIf="form.controls['stock'].invalid && (form.controls['stock'].dirty || form.controls['stock'].touched)" class="w-full mb-3">
                   <p *ngIf="this.form.get('stock')?.errors?.['required']" class="text-red-400 text-sm mt-2 ml-1 tracking-tight" >Stock is required.</p>
                   <p *ngIf="this.form.get('stock')?.errors?.['pattern']" class="text-red-400 text-sm mt-2 ml-1  tracking-tight" >Stock is not valid.</p>
@@ -48,7 +48,7 @@
             <div class="flex flex-wrap -mx-3 mb-6">
               <div class="w-full px-3">
                 <label for="shortDescription" class="sr-only">shortDescription</label>
-                <input   id="shortDescription" name="name" formControlName="shortDescription" type="text" required class="relative block w-full {{(form.controls['shortDescription'].invalid && (form.controls['shortDescription'].dirty || form.controls['shortDescription'].touched)) && 'border-red-500'}} appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Short description of the product">
+                <input   id="shortDescription" name="name" formControlName="shortDescription" type="text" required class="relative block w-full {{(form.controls['shortDescription'].invalid && (form.controls['shortDescription'].dirty || form.controls['shortDescription'].touched)) && 'border-red-500'}} appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-teal-500 focus:outline-none focus:ring-teal-500 sm:text-sm" placeholder="Short description of the product">
                 <div *ngIf="form.controls['shortDescription'].invalid && (form.controls['shortDescription'].dirty || form.controls['shortDescription'].touched)" class="w-full mb-3">
                   <p *ngIf="this.form.get('shortDescription')?.errors?.['required']" class="text-red-400 text-sm mt-2 ml-1 tracking-tight" >Short description is required.</p>
                   <p *ngIf="this.form.get('shortDescription')?.errors?.['pattern']" class="text-red-400 text-sm mt-2 ml-1  tracking-tight" >Short description is not valid.</p>
@@ -61,7 +61,7 @@
             <div class="flex flex-wrap -mx-3 mb-6">
               <div class="w-full px-3">
                 <label for="description" class="sr-only">description</label>
-                <textarea   id="description" name="description" formControlName="description" type="text-area" required class="relative block w-full {{(form.controls['description'].invalid && (form.controls['description'].dirty || form.controls['category'].touched)) && 'border-red-500'}} appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Description of the product"> </textarea>
+                <textarea   id="description" name="description" formControlName="description" type="text-area" required class="relative block w-full {{(form.controls['description'].invalid && (form.controls['description'].dirty || form.controls['category'].touched)) && 'border-red-500'}} appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-teal-500 focus:outline-none focus:ring-teal-500 sm:text-sm" placeholder="Description of the product"> </textarea>
                 <div *ngIf="form.controls['description'].invalid && (form.controls['description'].dirty || form.controls['description'].touched)" class="w-full mb-3">
                   <p *ngIf="this.form.get('description')?.errors?.['required']" class="text-red-400 text-sm mt-2 ml-1 tracking-tight" >description is required.</p>
                   <p *ngIf="this.form.get('description')?.errors?.['pattern']" class="text-red-400 text-sm mt-2 ml-1  tracking-tight" >description is not valid.</p>
@@ -72,7 +72,7 @@
             <div class="flex flex-wrap -mx-3 mb-6">
               <div class="w-full px-3">
                 <label for="imageSrc" class="sr-only">Image source</label>
-                <textarea   id="imageSrc" name="imageSrc" formControlName="imageSrc" type="text" required class="relative block w-full {{(form.controls['imageSrc'].invalid && (form.controls['description'].dirty || form.controls['category'].touched)) && 'border-red-500'}} appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Image source of the product"> </textarea>
+                <textarea   id="imageSrc" name="imageSrc" formControlName="imageSrc" type="text" required class="relative block w-full {{(form.controls['imageSrc'].invalid && (form.controls['description'].dirty || form.controls['category'].touched)) && 'border-red-500'}} appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-teal-500 focus:outline-none focus:ring-teal-500 sm:text-sm" placeholder="Image source of the product"> </textarea>
                 <div *ngIf="form.controls['imageSrc'].invalid && (form.controls['description'].dirty || form.controls['description'].touched)" class="w-full mb-3">
                   <p *ngIf="this.form.get('imageSrc')?.errors?.['required']" class="text-red-400 text-sm mt-2 ml-1 tracking-tight" >image source is required.</p>
                   <p *ngIf="this.form.get('imageSrc')?.errors?.['pattern']" class="text-red-400 text-sm mt-2 ml-1  tracking-tight" >image source is not valid.</p>
@@ -97,7 +97,7 @@
 
 
             <div>
-              <button (click)="onSubmit()" type="submit" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+              <button (click)="onSubmit()" type="submit" class="group relative flex w-full justify-center rounded-md border border-transparent bg-teal-600 py-2 px-4 text-sm font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
           <span *ngIf="loading">
             <svg  class="w-5 h-5 mr-3 -ml-1 text-center text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
                   viewBox="0 0 24 24">
@@ -109,7 +109,7 @@
           </span>
 
                 <span *ngIf="!loading" class="absolute inset-y-0 left-0 flex items-center pl-3">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-teal-500 group-hover:text-teal-400">
           <path fill-rule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
             </svg>
           </span>
