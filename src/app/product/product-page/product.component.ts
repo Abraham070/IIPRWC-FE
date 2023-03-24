@@ -51,7 +51,7 @@ export class ProductComponent implements OnInit {
     }
     }
 
-  addToCart() {if (this.quantity == 1 || this.quantity < 1) {
+  addToCart() {if (this.quantity < 1) {
     this.quantity = 1;
     this.toastr.error("Negative numbers", "Error")
 
